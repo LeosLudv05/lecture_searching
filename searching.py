@@ -28,6 +28,9 @@ def main():
     #read data
     seq = read_data(file_name, field='unordered_numbers')
     print(seq)
+    #pattern_search
+    idx = pattern_search(seq, vzor = "ATA")
+    print(idx)
     pass
 
 def linear_search(seq, cislo):
@@ -53,6 +56,30 @@ def linear_search(seq, cislo):
         'count': count,
     }
 
+
+def pattern_search(seq, vzor):
+    """
+    Algoritmus sekvenčního vyhledávání vzorů, který v řetězci DNA nalezne pozice výskytu zadaného vzoru.
+    :param indexy: tuple s indexy
+    :param seq: Prohledávaná sekvence
+    :param vzor: Hledaný vzor v DNA
+    :return: tuple(indexy výskytu)
+    """
+
+    velikost_vzoru = len(vzor)
+    left_idx = 0
+    right_idx = velikost_vzoru
+    while right_idx < len(seq):
+        for idx in range(velikost_vzoru):
+            if vzor[idx] != seq[left_idx + idx]:
+                break
+        else:
+                indexy.add(left_idx + velikost_vzoru // 2)
+        left_idx += 1
+        right_idx += 1
+
+
+    return indexy
 
 if __name__ == '__main__':
     main()
