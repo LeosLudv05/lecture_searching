@@ -65,7 +65,7 @@ def pattern_search(seq, vzor):
     :param vzor: Hledaný vzor v DNA
     :return: tuple(indexy výskytu)
     """
-
+    indexy = set()
     velikost_vzoru = len(vzor)
     left_idx = 0
     right_idx = velikost_vzoru
@@ -80,6 +80,18 @@ def pattern_search(seq, vzor):
 
 
     return indexy
+
+
+def binary_search(seznam, cislo):
+    """
+    Bude binárně vyhledávat zda-li se ve vzestupně seřazené posloupnosti nachází libovolné požadované číslo a vrátí jeho pozici.
+    :param seznam:
+    :param cislo:
+    :return:
+    """
+
+
+
 
 if __name__ == '__main__':
     main()
