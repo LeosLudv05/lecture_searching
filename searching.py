@@ -28,12 +28,25 @@ def main():
     #read data
     seq = read_data(file_name, field='unordered_numbers')
     print(seq)
+
+    #linear search
+    results = linear_search(seq, cislo = 0)
+
     #read data
     seq = read_data(file_name, field='dna_sequence')
     vzor = "ATA"
+
     #pattern_search
     matches = pattern_search(seq, vzor)
     print(matches)
+
+    #read data
+    seq = read_data(file_name, field='ordered_numbers')
+
+    #binary search
+
+
+
     pass
 
 def linear_search(seq, cislo):
@@ -88,10 +101,38 @@ def pattern_search(seq, vzor):
 def binary_search(seznam, cislo):
     """
     Bude binárně vyhledávat zda-li se ve vzestupně seřazené posloupnosti nachází libovolné požadované číslo a vrátí jeho pozici.
-    :param seznam:
-    :param cislo:
-    :return:
+    :param seznam: prohledavany seznam cisel, ze souboru, nacitaji se z "ordered_numbers"
+    :param cislo: cislo ktere chci najit
+    :return: index kde se nachazi nebo None
     """
+    prumer = len(seznam) / 2
+    index = int
+
+    left, right = (0, len(seznam) - 1)
+
+    while left <= right:
+        middle = (right + left) // 2
+
+        if cislo < seznam[middle]:
+            right = middle - 1
+        elif cislo > seznam[middle]:
+            left = middle + 1
+        else:
+            return middle
+
+    return
+        #for seznam[prumer] in seznam:
+        #   if cislo > prumer:
+         #       prumer += 1
+         #       if cislo == cislo:
+          #          index = prumer
+           #     else:
+            #        break
+
+            #elif cislo < prumer:
+             #   prumer -= 1
+              #  if cislo == cislo:
+               #     index = prumer
 
 
 
