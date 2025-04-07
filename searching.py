@@ -1,5 +1,6 @@
 import json
 import os
+import time
 
 # get current working directory path
 cwd_path = os.getcwd()
@@ -22,32 +23,6 @@ def read_data(file_name, field):
 
     return seq[field]
 
-def main():
-    file_name = "sequential.json"
-
-    #read data
-    seq = read_data(file_name, field='unordered_numbers')
-    print(seq)
-
-    #linear search
-    results = linear_search(seq, cislo = 0)
-
-    #read data
-    seq = read_data(file_name, field='dna_sequence')
-    vzor = "ATA"
-
-    #pattern_search
-    matches = pattern_search(seq, vzor)
-    print(matches)
-
-    #read data
-    seq = read_data(file_name, field='ordered_numbers')
-
-    #binary search
-
-
-
-    pass
 
 def linear_search(seq, cislo):
     """
@@ -135,6 +110,37 @@ def binary_search(seznam, cislo):
                #     index = prumer
 
 
+
+
+
+
+
+def main():
+    file_name = "sequential.json"
+
+    #read data
+    seq = read_data(file_name, field='unordered_numbers')
+    print(seq)
+
+    #linear search
+    results = linear_search(seq, cislo = 0)
+
+    #read data
+    seq = read_data(file_name, field='dna_sequence')
+    vzor = "ATA"
+
+    #pattern_search
+    matches = pattern_search(seq, vzor)
+    print(matches)
+
+    #read data
+    seq = read_data(file_name, field='ordered_numbers')
+
+    #binary search
+
+
+
+    pass
 
 
 if __name__ == '__main__':
