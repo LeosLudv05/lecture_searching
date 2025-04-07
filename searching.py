@@ -1,6 +1,8 @@
 import json
 import os
 import time
+from generators import main as generator
+
 
 # get current working directory path
 cwd_path = os.getcwd()
@@ -114,10 +116,10 @@ def binary_search(seznam, cislo):
 
 
 
-
 def main():
     file_name = "sequential.json"
-
+    time.time()
+    start_time_linear = time.time()
     #read data
     seq = read_data(file_name, field='unordered_numbers')
     print(seq)
