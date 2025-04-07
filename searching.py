@@ -28,9 +28,12 @@ def main():
     #read data
     seq = read_data(file_name, field='unordered_numbers')
     print(seq)
+    #read data
+    seq = read_data(file_name, field='dna_sequence')
+    vzor = "ATA"
     #pattern_search
-    idx = pattern_search(seq, vzor = "ATA")
-    print(idx)
+    matches = pattern_search(seq, vzor)
+    print(matches)
     pass
 
 def linear_search(seq, cislo):
